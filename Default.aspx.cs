@@ -7,21 +7,24 @@ using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page
 {
-    String mystr;
     protected void Page_Load(object sender, EventArgs e)
     {
-        this.lblshstr.Text = this.mystr;
-        this.lblsession.Text = (String)this.Session["str"];
+
     }
-    protected void Button1_Click(object sender, EventArgs e)
+    protected void create_Click(object sender, EventArgs e)
     {
-        
+        Response.Cookies["name"].Value = TextBox1.Text;
+        Response.Cookies["name"].Expires = DateTime.Now.AddMinutes(1);
     }
-    protected void Button2_Click(object sender, EventArgs e)
+    protected void retrieve_Click(object sender, EventArgs e)
     {
-        this.mystr = this.TextBox1.Text;
-        this.Session["str"] = this.TextBox1.Text;
-        this.lblshstr.Text = this.mystr;
-        this.lblsession.Text = (String)this.Session["str"];
+        if (Request.Cookies["name"] == null)
+        {
+            TextBox3.Text = "No cookie found";
+        }
+        else
+        {
+            TextBox3.Text = Request.Cookies["name"].Value;
+        }
     }
 }

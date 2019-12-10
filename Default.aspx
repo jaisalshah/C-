@@ -10,36 +10,24 @@
     <form id="form1" runat="server">
     <div>
     <table>
-     <tr>
-    <td style="width:231px">
-        <asp:Label ID="Label1" runat="server" Text="Enter String"></asp:Label>
-         :-</td>
-    <td style="width:231px">
-        <asp:TextBox ID="TextBox1" runat="server" Width="224px"></asp:TextBox>
-         </td></tr>
     <tr>
     <td>
-        <asp:Button ID="Button1" runat="server" Text="No Action Button" 
-            onclick="Button1_Click" />
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
     </td>
     <td>
-        <asp:Button ID="Button2" runat="server" Text="Submit the string" 
-            onclick="Button2_Click" />
-    </td>
+        <asp:Button ID="Button1" runat="server" Text="Submit" onclick="create_Click" />
+        </td>
     </tr>
     <tr>
-    <td style="width:231px"></td>
-    <td style="width:231px"></td></tr>
-    <tr>
-    <td><asp:Label ID="lblsession" runat="server" style="width:231px" ></asp:Label>
+    
+        <td>
+        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+    </td>
+    <td>
+        <asp:Button ID="Button2" runat="server" Text="Retrieve" onclick="retrieve_Click"/>
         </td>
-        <td style="width:231px"></td></tr>
-        <tr>
-    <td><asp:Label ID="lblshstr" runat="server" ></asp:Label>
-        </td>
-        <td style="width:231px"></td>
-        </tr>
-        </table>
+    </tr></table>
+        <asp:Label ID="Label1" runat="server" ></asp:Label>
     </div>
     </form>
 </body>
